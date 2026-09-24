@@ -760,7 +760,7 @@ export const InscripcionScalarFieldEnum = {
   horarioId: 'horarioId',
   miembroId: 'miembroId',
   estado: 'estado',
-  creadoEn: 'creadoEn'
+  creadaEn: 'creadaEn'
 } as const
 
 export type InscripcionScalarFieldEnum = (typeof InscripcionScalarFieldEnum)[keyof typeof InscripcionScalarFieldEnum]

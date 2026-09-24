@@ -43,7 +43,7 @@ export type InscripcionMinAggregateOutputType = {
   horarioId: number | null
   miembroId: number | null
   estado: $Enums.EstadoInscripcion | null
-  creadoEn: Date | null
+  creadaEn: Date | null
 }
 
 export type InscripcionMaxAggregateOutputType = {
@@ -51,7 +51,7 @@ export type InscripcionMaxAggregateOutputType = {
   horarioId: number | null
   miembroId: number | null
   estado: $Enums.EstadoInscripcion | null
-  creadoEn: Date | null
+  creadaEn: Date | null
 }
 
 export type InscripcionCountAggregateOutputType = {
@@ -59,7 +59,7 @@ export type InscripcionCountAggregateOutputType = {
   horarioId: number
   miembroId: number
   estado: number
-  creadoEn: number
+  creadaEn: number
   _all: number
 }
 
@@ -81,7 +81,7 @@ export type InscripcionMinAggregateInputType = {
   horarioId?: true
   miembroId?: true
   estado?: true
-  creadoEn?: true
+  creadaEn?: true
 }
 
 export type InscripcionMaxAggregateInputType = {
@@ -89,7 +89,7 @@ export type InscripcionMaxAggregateInputType = {
   horarioId?: true
   miembroId?: true
   estado?: true
-  creadoEn?: true
+  creadaEn?: true
 }
 
 export type InscripcionCountAggregateInputType = {
@@ -97,7 +97,7 @@ export type InscripcionCountAggregateInputType = {
   horarioId?: true
   miembroId?: true
   estado?: true
-  creadoEn?: true
+  creadaEn?: true
   _all?: true
 }
 
@@ -192,7 +192,7 @@ export type InscripcionGroupByOutputType = {
   horarioId: number
   miembroId: number
   estado: $Enums.EstadoInscripcion
-  creadoEn: Date
+  creadaEn: Date
   _count: InscripcionCountAggregateOutputType | null
   _avg: InscripcionAvgAggregateOutputType | null
   _sum: InscripcionSumAggregateOutputType | null
@@ -223,7 +223,7 @@ export type InscripcionWhereInput = {
   horarioId?: Prisma.IntFilter<"Inscripcion"> | number
   miembroId?: Prisma.IntFilter<"Inscripcion"> | number
   estado?: Prisma.EnumEstadoInscripcionFilter<"Inscripcion"> | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFilter<"Inscripcion"> | Date | string
+  creadaEn?: Prisma.DateTimeFilter<"Inscripcion"> | Date | string
   horario?: Prisma.XOR<Prisma.HorarioScalarRelationFilter, Prisma.HorarioWhereInput>
   miembro?: Prisma.XOR<Prisma.MiembroScalarRelationFilter, Prisma.MiembroWhereInput>
 }
@@ -233,7 +233,7 @@ export type InscripcionOrderByWithRelationInput = {
   horarioId?: Prisma.SortOrder
   miembroId?: Prisma.SortOrder
   estado?: Prisma.SortOrder
-  creadoEn?: Prisma.SortOrder
+  creadaEn?: Prisma.SortOrder
   horario?: Prisma.HorarioOrderByWithRelationInput
   miembro?: Prisma.MiembroOrderByWithRelationInput
 }
@@ -247,7 +247,7 @@ export type InscripcionWhereUniqueInput = Prisma.AtLeast<{
   horarioId?: Prisma.IntFilter<"Inscripcion"> | number
   miembroId?: Prisma.IntFilter<"Inscripcion"> | number
   estado?: Prisma.EnumEstadoInscripcionFilter<"Inscripcion"> | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFilter<"Inscripcion"> | Date | string
+  creadaEn?: Prisma.DateTimeFilter<"Inscripcion"> | Date | string
   horario?: Prisma.XOR<Prisma.HorarioScalarRelationFilter, Prisma.HorarioWhereInput>
   miembro?: Prisma.XOR<Prisma.MiembroScalarRelationFilter, Prisma.MiembroWhereInput>
 }, "id" | "horarioId_miembroId">
@@ -257,7 +257,7 @@ export type InscripcionOrderByWithAggregationInput = {
   horarioId?: Prisma.SortOrder
   miembroId?: Prisma.SortOrder
   estado?: Prisma.SortOrder
-  creadoEn?: Prisma.SortOrder
+  creadaEn?: Prisma.SortOrder
   _count?: Prisma.InscripcionCountOrderByAggregateInput
   _avg?: Prisma.InscripcionAvgOrderByAggregateInput
   _max?: Prisma.InscripcionMaxOrderByAggregateInput
@@ -273,12 +273,12 @@ export type InscripcionScalarWhereWithAggregatesInput = {
   horarioId?: Prisma.IntWithAggregatesFilter<"Inscripcion"> | number
   miembroId?: Prisma.IntWithAggregatesFilter<"Inscripcion"> | number
   estado?: Prisma.EnumEstadoInscripcionWithAggregatesFilter<"Inscripcion"> | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeWithAggregatesFilter<"Inscripcion"> | Date | string
+  creadaEn?: Prisma.DateTimeWithAggregatesFilter<"Inscripcion"> | Date | string
 }
 
 export type InscripcionCreateInput = {
   estado?: $Enums.EstadoInscripcion
-  creadoEn?: Date | string
+  creadaEn?: Date | string
   horario: Prisma.HorarioCreateNestedOneWithoutInscripcionesInput
   miembro: Prisma.MiembroCreateNestedOneWithoutInscripcionesInput
 }
@@ -288,12 +288,12 @@ export type InscripcionUncheckedCreateInput = {
   horarioId: number
   miembroId: number
   estado?: $Enums.EstadoInscripcion
-  creadoEn?: Date | string
+  creadaEn?: Date | string
 }
 
 export type InscripcionUpdateInput = {
   estado?: Prisma.EnumEstadoInscripcionFieldUpdateOperationsInput | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  creadaEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   horario?: Prisma.HorarioUpdateOneRequiredWithoutInscripcionesNestedInput
   miembro?: Prisma.MiembroUpdateOneRequiredWithoutInscripcionesNestedInput
 }
@@ -303,7 +303,7 @@ export type InscripcionUncheckedUpdateInput = {
   horarioId?: Prisma.IntFieldUpdateOperationsInput | number
   miembroId?: Prisma.IntFieldUpdateOperationsInput | number
   estado?: Prisma.EnumEstadoInscripcionFieldUpdateOperationsInput | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  creadaEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InscripcionCreateManyInput = {
@@ -311,12 +311,12 @@ export type InscripcionCreateManyInput = {
   horarioId: number
   miembroId: number
   estado?: $Enums.EstadoInscripcion
-  creadoEn?: Date | string
+  creadaEn?: Date | string
 }
 
 export type InscripcionUpdateManyMutationInput = {
   estado?: Prisma.EnumEstadoInscripcionFieldUpdateOperationsInput | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  creadaEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InscripcionUncheckedUpdateManyInput = {
@@ -324,7 +324,7 @@ export type InscripcionUncheckedUpdateManyInput = {
   horarioId?: Prisma.IntFieldUpdateOperationsInput | number
   miembroId?: Prisma.IntFieldUpdateOperationsInput | number
   estado?: Prisma.EnumEstadoInscripcionFieldUpdateOperationsInput | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  creadaEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InscripcionListRelationFilter = {
@@ -347,7 +347,7 @@ export type InscripcionCountOrderByAggregateInput = {
   horarioId?: Prisma.SortOrder
   miembroId?: Prisma.SortOrder
   estado?: Prisma.SortOrder
-  creadoEn?: Prisma.SortOrder
+  creadaEn?: Prisma.SortOrder
 }
 
 export type InscripcionAvgOrderByAggregateInput = {
@@ -361,7 +361,7 @@ export type InscripcionMaxOrderByAggregateInput = {
   horarioId?: Prisma.SortOrder
   miembroId?: Prisma.SortOrder
   estado?: Prisma.SortOrder
-  creadoEn?: Prisma.SortOrder
+  creadaEn?: Prisma.SortOrder
 }
 
 export type InscripcionMinOrderByAggregateInput = {
@@ -369,7 +369,7 @@ export type InscripcionMinOrderByAggregateInput = {
   horarioId?: Prisma.SortOrder
   miembroId?: Prisma.SortOrder
   estado?: Prisma.SortOrder
-  creadoEn?: Prisma.SortOrder
+  creadaEn?: Prisma.SortOrder
 }
 
 export type InscripcionSumOrderByAggregateInput = {
@@ -472,7 +472,7 @@ export type DateTimeFieldUpdateOperationsInput = {
 
 export type InscripcionCreateWithoutHorarioInput = {
   estado?: $Enums.EstadoInscripcion
-  creadoEn?: Date | string
+  creadaEn?: Date | string
   miembro: Prisma.MiembroCreateNestedOneWithoutInscripcionesInput
 }
 
@@ -480,7 +480,7 @@ export type InscripcionUncheckedCreateWithoutHorarioInput = {
   id?: number
   miembroId: number
   estado?: $Enums.EstadoInscripcion
-  creadoEn?: Date | string
+  creadaEn?: Date | string
 }
 
 export type InscripcionCreateOrConnectWithoutHorarioInput = {
@@ -517,12 +517,12 @@ export type InscripcionScalarWhereInput = {
   horarioId?: Prisma.IntFilter<"Inscripcion"> | number
   miembroId?: Prisma.IntFilter<"Inscripcion"> | number
   estado?: Prisma.EnumEstadoInscripcionFilter<"Inscripcion"> | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFilter<"Inscripcion"> | Date | string
+  creadaEn?: Prisma.DateTimeFilter<"Inscripcion"> | Date | string
 }
 
 export type InscripcionCreateWithoutMiembroInput = {
   estado?: $Enums.EstadoInscripcion
-  creadoEn?: Date | string
+  creadaEn?: Date | string
   horario: Prisma.HorarioCreateNestedOneWithoutInscripcionesInput
 }
 
@@ -530,7 +530,7 @@ export type InscripcionUncheckedCreateWithoutMiembroInput = {
   id?: number
   horarioId: number
   estado?: $Enums.EstadoInscripcion
-  creadoEn?: Date | string
+  creadaEn?: Date | string
 }
 
 export type InscripcionCreateOrConnectWithoutMiembroInput = {
@@ -563,12 +563,12 @@ export type InscripcionCreateManyHorarioInput = {
   id?: number
   miembroId: number
   estado?: $Enums.EstadoInscripcion
-  creadoEn?: Date | string
+  creadaEn?: Date | string
 }
 
 export type InscripcionUpdateWithoutHorarioInput = {
   estado?: Prisma.EnumEstadoInscripcionFieldUpdateOperationsInput | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  creadaEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   miembro?: Prisma.MiembroUpdateOneRequiredWithoutInscripcionesNestedInput
 }
 
@@ -576,26 +576,26 @@ export type InscripcionUncheckedUpdateWithoutHorarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   miembroId?: Prisma.IntFieldUpdateOperationsInput | number
   estado?: Prisma.EnumEstadoInscripcionFieldUpdateOperationsInput | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  creadaEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InscripcionUncheckedUpdateManyWithoutHorarioInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   miembroId?: Prisma.IntFieldUpdateOperationsInput | number
   estado?: Prisma.EnumEstadoInscripcionFieldUpdateOperationsInput | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  creadaEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InscripcionCreateManyMiembroInput = {
   id?: number
   horarioId: number
   estado?: $Enums.EstadoInscripcion
-  creadoEn?: Date | string
+  creadaEn?: Date | string
 }
 
 export type InscripcionUpdateWithoutMiembroInput = {
   estado?: Prisma.EnumEstadoInscripcionFieldUpdateOperationsInput | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  creadaEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   horario?: Prisma.HorarioUpdateOneRequiredWithoutInscripcionesNestedInput
 }
 
@@ -603,14 +603,14 @@ export type InscripcionUncheckedUpdateWithoutMiembroInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   horarioId?: Prisma.IntFieldUpdateOperationsInput | number
   estado?: Prisma.EnumEstadoInscripcionFieldUpdateOperationsInput | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  creadaEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type InscripcionUncheckedUpdateManyWithoutMiembroInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   horarioId?: Prisma.IntFieldUpdateOperationsInput | number
   estado?: Prisma.EnumEstadoInscripcionFieldUpdateOperationsInput | $Enums.EstadoInscripcion
-  creadoEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  creadaEn?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
@@ -620,7 +620,7 @@ export type InscripcionSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   horarioId?: boolean
   miembroId?: boolean
   estado?: boolean
-  creadoEn?: boolean
+  creadaEn?: boolean
   horario?: boolean | Prisma.HorarioDefaultArgs<ExtArgs>
   miembro?: boolean | Prisma.MiembroDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["inscripcion"]>
@@ -632,10 +632,10 @@ export type InscripcionSelectScalar = {
   horarioId?: boolean
   miembroId?: boolean
   estado?: boolean
-  creadoEn?: boolean
+  creadaEn?: boolean
 }
 
-export type InscripcionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "horarioId" | "miembroId" | "estado" | "creadoEn", ExtArgs["result"]["inscripcion"]>
+export type InscripcionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "horarioId" | "miembroId" | "estado" | "creadaEn", ExtArgs["result"]["inscripcion"]>
 export type InscripcionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   horario?: boolean | Prisma.HorarioDefaultArgs<ExtArgs>
   miembro?: boolean | Prisma.MiembroDefaultArgs<ExtArgs>
@@ -652,7 +652,7 @@ export type $InscripcionPayload<ExtArgs extends runtime.Types.Extensions.Interna
     horarioId: number
     miembroId: number
     estado: $Enums.EstadoInscripcion
-    creadoEn: Date
+    creadaEn: Date
   }, ExtArgs["result"]["inscripcion"]>
   composites: {}
 }
@@ -1028,7 +1028,7 @@ export interface InscripcionFieldRefs {
   readonly horarioId: Prisma.FieldRef<"Inscripcion", 'Int'>
   readonly miembroId: Prisma.FieldRef<"Inscripcion", 'Int'>
   readonly estado: Prisma.FieldRef<"Inscripcion", 'EstadoInscripcion'>
-  readonly creadoEn: Prisma.FieldRef<"Inscripcion", 'DateTime'>
+  readonly creadaEn: Prisma.FieldRef<"Inscripcion", 'DateTime'>
 }
     
 

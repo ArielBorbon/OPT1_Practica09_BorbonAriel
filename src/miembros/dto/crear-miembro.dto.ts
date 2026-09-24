@@ -1,7 +1,16 @@
-// Validacion minima a mano. En la Sesion 9 (Blindar la API) la hace
-// ValidationPipe.
-export interface CrearMiembroDto {
-  nombre: string;
-  correo: string;
-  membresia: string;
+import { IsString, IsNotEmpty, MaxLength, IsEmail, IsIn } from 'class-validator';
+
+export class CrearMiembroDto {
+  @IsString()
+  @IsNotEmpty()
+  @MaxLength(255)
+  nombre: string = "";
+
+  @IsEmail({})
+  @IsNotEmpty()
+  correo: string = "";
+
+  @IsString()
+  @IsNotEmpty()
+  membresia: string = "";
 }

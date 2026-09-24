@@ -2,21 +2,25 @@
 Ariel Eduardo Borbon Izaguirre 252116
 
 
-¿por qué el paquete del adaptador se llama adapter-mariadb si usamos MySQL?
-porque mariadb es un fork de MySQL, entonces son relativamente "Gemelos" por lo que el controlador de Node es compatible con MySQL
+¿qué línea del Service o del Controller tuvo que cambiar para que Clases hablara con MySQL?
+Ninguna, como el service siempre hablo con una interfaz, para todo el sistema es como si no hubiera cambiado nada, por lo que todo funciono exactamente igual sin mover nada
 
 
-¿editar schema.prisma cambió algo en la base de datos antes de migrar?
-No, cuando cambias el schema.prisma solo se cambia de manera local, cuando se hace el migrate ahi si ya se reflejan en la BD real
+¿por qué InscripcionesService no tuvo que cambiar ni una línea de las reglas de cupo y duplicados?
+porque toda esta logica esta obligatoriamente en el service, mientras que se siga inyectando la dependencia con la interfaz, todas las reglas de validacion se van a mantener igual para cualquier BD que se conecte
 
 
-¿la carpeta de migraciones es una foto del esquema o un historial?
-es el historial, cada migracion hace un .sql con los cambios que se hicieron de version en version, para tener un registro a la mano de todos los cambios que se han hecho
+¿por qué una interfaz no puede validar nada en tiempo de ejecución?
+porque las interfaces al pasarse a JS desaparecen, por lo que algo como class-validator no tendria de donde validar, pero las clases si se mantienen
 
 
-¿por qué Horario.clase sí crea columna y Clase.horarios no?
-porque horario.clase es el lado de la relacion que tiene la llave foranea (que seria la columna donde se guarda el id foranea) y clase.horarios es un campo oculto que usa prisma para poder acceder a los horarios desde codigo, pero sin existir como columna en la BD 
+¿qué código de estado responde y qué trae en el cuerpo?
+con un 400 bad request y un mensaje que dice que no deberia existir
 
 
-¿de dónde sale la relación de muchos a muchos entre Miembro y Horario, si nunca se declaró?
-de la tabla de inscripcion, como se tiene de uno a muchos desde horario a inscripcion, y una a muchos de miembro a inscripcion, se "Asume" como muchos a muchos una relacion entre Horario y miembro
+¿cuántas líneas quedó más corto el controlador?
+alrededor de 10-20 lineas, ya que se borraron los try catch y las validaciones de ahi mismo
+
+
+¿quién bloquea realmente y a quién protege?
+el que bloquea es el navegador, el servidor recibe y envia la informacion, pero el navegador no le da la informacion al cliente ya que no esta autorizado, esto sirve para proteger al usuario en caso de que una pagina con virus haga peticiones en su nombre con la sesion activa
