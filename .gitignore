@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.env
+
+.agents/
+.claude/
+.windsurf/
+
+/generated/prisma
